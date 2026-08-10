@@ -3,11 +3,11 @@ import { Star, Quote, CheckCircle2 } from 'lucide-react';
 import { testimonials } from '../data/content';
 
 const avatarImages = [
-  'https://i.ibb.co/d0Sf4fGN/1404e6a6d19e57d86df4db0fc5e602b8.webp',
-  'https://i.ibb.co/mFMrSxt4/4468f00b988ced120a27e82ffa35a64f.webp',
-  'https://i.ibb.co/j969vqr6/488470220cdbdd72f73405d473a2e8f6.webp',
-  'https://i.ibb.co/t5RkY7f/482dec4bd6b1d1c425c53129de7790bb.webp',
-  'https://i.ibb.co/MxmMC0dR/34a9da783b1044433ddecdc0fc855045.webp',
+  '/images/t1.webp',
+  '/images/t2.webp',
+  '/images/t3.webp',
+  '/images/t4.webp',
+  '/images/t5.webp',
 ];
 
 const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];

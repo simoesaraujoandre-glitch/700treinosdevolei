@@ -2,21 +2,21 @@ import React from 'react';
 
 // Esteira de cima: "produto principal"
 const materialImages = [
-  'https://i.ibb.co/HTWLN1FR/produto-principal-5.webp',
-  'https://i.ibb.co/Gfp82Q95/produto-principal-6.webp',
-  'https://i.ibb.co/rNJZ3N9/produto-principal-2.webp',
-  'https://i.ibb.co/p6T58D99/produto-principal-3.webp',
-  'https://i.ibb.co/Psj02d82/produto-principal-4.webp',
+  '/images/p_5.webp',
+  '/images/p_6.webp',
+  '/images/p_2.webp',
+  '/images/p_3.webp',
+  '/images/p_4.webp',
 ];
 const duplicatedImages = [...materialImages, ...materialImages, ...materialImages];
 
 // Esteira de baixo: "mais do material"
 const secondMaterialImages = [
-  'https://i.ibb.co/7tFCL1BB/mais-do-que-voce-vai-receber-7.webp',
-  'https://i.ibb.co/xS8Mk549/mais-do-que-voce-vai-receber-8.webp',
-  'https://i.ibb.co/HDjF6GZq/mais-do-que-voce-vai-receber-9.webp',
-  'https://i.ibb.co/KjCFyjVV/mais-do-que-voce-vai-receber-10.webp',
-  'https://i.ibb.co/9m5GqHgq/mais-do-que-voce-vai-receber-6.webp',
+  '/images/material_7.webp',
+  '/images/material_8.webp',
+  '/images/material_9.webp',
+  '/images/material_10.webp',
+  '/images/material_6.webp',
 ];
 const duplicatedSecondImages = [...secondMaterialImages, ...secondMaterialImages, ...secondMaterialImages];
 
