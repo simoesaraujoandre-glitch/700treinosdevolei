@@ -3,9 +3,9 @@ import { BookOpen, Gift } from 'lucide-react';
 import { bonusList } from '../data/content';
 
 const bonusImages: Record<number, string> = {
-  1: 'https://i.ibb.co/93gV8p87/bonus-1-1-removebg-preview.png', // 1.000 exercícios extras
-  2: 'https://i.ibb.co/JFp5ZHDX/50sistemas-1-removebg-preview.png', // 50 sistemas táticos
-  3: 'https://i.ibb.co/WNMgwVY1/75sessoes-1-removebg-preview.png', // 75 sessões de recepção
+  1: 'https://i.ibb.co/2Rw8C6f/bonus-1-1-removebg-preview.webp', // 1.000 exercícios extras
+  2: 'https://i.ibb.co/s95ksDnG/50sistemas-1-removebg-preview.webp', // 50 sistemas táticos
+  3: 'https://i.ibb.co/gLs3xHm3/75sessoes-1-removebg-preview.webp', // 75 sessões de recepção
 };
 
 export const BonusSection: React.FC = React.memo(() => {
@@ -63,7 +63,7 @@ export const BonusSection: React.FC = React.memo(() => {
                         className="w-full h-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-300"
                         width={200}
                         height={260}
-                        loading="eager"
+                        loading="lazy"
                         decoding="async"
                         onError={() => handleImageError(bonus.id)}
                       />

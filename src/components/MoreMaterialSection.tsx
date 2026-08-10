@@ -2,22 +2,21 @@ import React from 'react';
 
 // Esteira de cima: "produto principal"
 const materialImages = [
-  'https://i.ibb.co/4RZZcXgN/produto-principal-8.jpg',
-  'https://i.ibb.co/LdBTLgfD/produto-principal-9.jpg',
-  'https://i.ibb.co/gLXVNyMc/produto-principal-10.jpg',
-  'https://i.ibb.co/xRG4GRz/produto-principal-11.jpg',
-  'https://i.ibb.co/jPTN7pSq/produto-principal-1.jpg',
+  'https://i.ibb.co/HTWLN1FR/produto-principal-5.webp',
+  'https://i.ibb.co/Gfp82Q95/produto-principal-6.webp',
+  'https://i.ibb.co/rNJZ3N9/produto-principal-2.webp',
+  'https://i.ibb.co/p6T58D99/produto-principal-3.webp',
+  'https://i.ibb.co/Psj02d82/produto-principal-4.webp',
 ];
 const duplicatedImages = [...materialImages, ...materialImages, ...materialImages];
 
 // Esteira de baixo: "mais do material"
 const secondMaterialImages = [
-  'https://i.ibb.co/xK9NZZGG/mais-do-que-voce-vai-receber-6.jpg',
-  'https://i.ibb.co/gb1hkNpw/mais-do-que-voce-vai-receber-7.jpg',
-  'https://i.ibb.co/N6kL42C6/mais-do-que-voce-vai-receber-8.jpg',
-  'https://i.ibb.co/HLnpMLNV/mais-do-que-voce-vai-receber-9.jpg',
-  'https://i.ibb.co/zh5Yf1Sx/mais-do-que-voce-vai-receber-10.jpg',
-  'https://i.ibb.co/Z1M5RfbV/mais-do-que-voce-vai-receber-11.jpg',
+  'https://i.ibb.co/7tFCL1BB/mais-do-que-voce-vai-receber-7.webp',
+  'https://i.ibb.co/xS8Mk549/mais-do-que-voce-vai-receber-8.webp',
+  'https://i.ibb.co/HDjF6GZq/mais-do-que-voce-vai-receber-9.webp',
+  'https://i.ibb.co/KjCFyjVV/mais-do-que-voce-vai-receber-10.webp',
+  'https://i.ibb.co/9m5GqHgq/mais-do-que-voce-vai-receber-6.webp',
 ];
 const duplicatedSecondImages = [...secondMaterialImages, ...secondMaterialImages, ...secondMaterialImages];
 
@@ -44,7 +43,7 @@ export const MoreMaterialSection: React.FC = React.memo(() => {
                 src={imgUrl}
                 alt={`Página real do material ${index + 1}`}
                 className="h-[200px] sm:h-[260px] md:h-[300px] w-auto shrink-0 rounded-xl object-contain shadow-xl border border-white/10 bg-[#0D2B52] p-1"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             );
@@ -65,7 +64,7 @@ export const MoreMaterialSection: React.FC = React.memo(() => {
                 src={imgUrl}
                 alt={`Página demonstrativa ${index + 1}`}
                 className="h-[200px] sm:h-[260px] md:h-[300px] w-auto shrink-0 rounded-xl object-contain shadow-xl border border-white/10 bg-[#0D2B52] p-1"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             );

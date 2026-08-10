@@ -3,11 +3,11 @@ import { Star, Quote, CheckCircle2 } from 'lucide-react';
 import { testimonials } from '../data/content';
 
 const avatarImages = [
-  'https://i.ibb.co/jk0q784L/1404e6a6d19e57d86df4db0fc5e602b8.jpg',
-  'https://i.ibb.co/Cp3n0snY/4468f00b988ced120a27e82ffa35a64f.jpg',
-  'https://i.ibb.co/TxNr9DSD/488470220cdbdd72f73405d473a2e8f6.jpg',
-  'https://i.ibb.co/dJPsZpvV/482dec4bd6b1d1c425c53129de7790bb.jpg',
-  'https://i.ibb.co/q3Rzx0MH/34a9da783b1044433ddecdc0fc855045.jpg',
+  'https://i.ibb.co/d0Sf4fGN/1404e6a6d19e57d86df4db0fc5e602b8.webp',
+  'https://i.ibb.co/mFMrSxt4/4468f00b988ced120a27e82ffa35a64f.webp',
+  'https://i.ibb.co/j969vqr6/488470220cdbdd72f73405d473a2e8f6.webp',
+  'https://i.ibb.co/t5RkY7f/482dec4bd6b1d1c425c53129de7790bb.webp',
+  'https://i.ibb.co/MxmMC0dR/34a9da783b1044433ddecdc0fc855045.webp',
 ];
 
 const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
@@ -62,7 +62,7 @@ export const TestimonialsSection: React.FC = React.memo(() => {
                   width={44}
                   height={44}
                   className="w-11 h-11 rounded-full object-cover border-2 border-[#FF7A00] shrink-0"
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                 />
                 <div className="min-w-0 flex-1">

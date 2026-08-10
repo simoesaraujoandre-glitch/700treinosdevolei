@@ -43,7 +43,7 @@ export const HeroSection: React.FC<HeroSectionProps> = React.memo(({
             <div className="absolute inset-0 bg-[#FF7A00]/20 rounded-full blur-3xl pointer-events-none" />
             
             <img
-              src="https://i.ibb.co/DHySZYTw/mockupp-removebg-preview.png"
+              src="https://i.ibb.co/4ZkP7q8c/mockupp-removebg-preview-elementor-io-optimized.webp"
               alt="Mockup do Produto"
               width={540}
               height={360}
