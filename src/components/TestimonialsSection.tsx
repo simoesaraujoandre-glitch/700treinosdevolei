@@ -1,13 +1,14 @@
 import React from 'react';
 import { Star, Quote, CheckCircle2 } from 'lucide-react';
 import { testimonials } from '../data/content';
-import t1 from '../assets/images/t1.jpg';
-import t2 from '../assets/images/t2.jpg';
-import t3 from '../assets/images/t3.jpg';
-import t4 from '../assets/images/t4.jpg';
-import t5 from '../assets/images/t5.jpg';
 
-const avatarImages = [t1, t2, t3, t4, t5];
+const avatarImages = [
+  'https://i.ibb.co/jk0q784L/1404e6a6d19e57d86df4db0fc5e602b8.jpg',
+  'https://i.ibb.co/Cp3n0snY/4468f00b988ced120a27e82ffa35a64f.jpg',
+  'https://i.ibb.co/TxNr9DSD/488470220cdbdd72f73405d473a2e8f6.jpg',
+  'https://i.ibb.co/dJPsZpvV/482dec4bd6b1d1c425c53129de7790bb.jpg',
+  'https://i.ibb.co/q3Rzx0MH/34a9da783b1044433ddecdc0fc855045.jpg',
+];
 
 const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
@@ -56,15 +57,7 @@ export const TestimonialsSection: React.FC = React.memo(() => {
               {/* Author Footer */}
               <div className="flex items-center gap-3 pt-4 border-t border-white/10">
                 <img
-                  src={`/images/t${((item.id - 1) % 5) + 1}.jpg`}
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.onerror = null;
-                    const fallback = item.avatar || avatarImages[(item.id - 1) % avatarImages.length];
-                    if (fallback) {
-                      target.src = fallback;
-                    }
-                  }}
+                  src={item.avatar || avatarImages[(item.id - 1) % avatarImages.length]}
                   alt={item.name}
                   width={44}
                   height={44}

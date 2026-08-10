@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import { BookOpen, Gift } from 'lucide-react';
 import { bonusList } from '../data/content';
-import bonus1Img from '../assets/images/bonus_1.png';
-import bonus2Img from '../assets/images/bonus_2.png';
-import bonus3Img from '../assets/images/bonus_3.png';
 
-const bonusLocalImages: Record<number, string> = {
-  1: bonus1Img,
-  2: bonus2Img,
-  3: bonus3Img,
+const bonusImages: Record<number, string> = {
+  1: 'https://i.ibb.co/93gV8p87/bonus-1-1-removebg-preview.png', // 1.000 exercícios extras
+  2: 'https://i.ibb.co/JFp5ZHDX/50sistemas-1-removebg-preview.png', // 50 sistemas táticos
+  3: 'https://i.ibb.co/WNMgwVY1/75sessoes-1-removebg-preview.png', // 75 sessões de recepção
 };
 
 export const BonusSection: React.FC = React.memo(() => {
@@ -38,8 +35,7 @@ export const BonusSection: React.FC = React.memo(() => {
         {/* 3 Bonus Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {bonusList.map((bonus) => {
-            const primarySrc = `/images/bonus_${bonus.id}.png`;
-            const fallbackSrc = bonusLocalImages[bonus.id] || bonus.coverImage;
+            const primarySrc = bonusImages[bonus.id] || bonus.coverImage;
             const hasFailed = failedImages[bonus.id];
 
             return (
@@ -69,15 +65,7 @@ export const BonusSection: React.FC = React.memo(() => {
                         height={260}
                         loading="eager"
                         decoding="async"
-                        onError={(e) => {
-                          const target = e.currentTarget;
-                          target.onerror = null;
-                          if (fallbackSrc && target.src !== fallbackSrc) {
-                            target.src = fallbackSrc;
-                          } else {
-                            handleImageError(bonus.id);
-                          }
-                        }}
+                        onError={() => handleImageError(bonus.id)}
                       />
                     ) : (
                       <div className="w-full h-full bg-[#071A33] flex flex-col items-center justify-center p-3 text-center space-y-2 rounded-xl border border-white/10">
