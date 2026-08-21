@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useCallback, lazy, Suspense } from 'react';
+import React from 'react';
 import { HeaderBanner } from './components/HeaderBanner';
 import { HeroSection } from './components/HeroSection';
 import { PainSolutionSection } from './components/PainSolutionSection';
@@ -19,48 +19,9 @@ import { FinalCtaSection } from './components/FinalCtaSection';
 import { Footer } from './components/Footer';
 
 import { defaultConfig } from './data/content';
-import { SalesPageConfig } from './types';
-
-const EditModal = lazy(() => import('./components/EditModal').then(m => ({ default: m.EditModal })));
-
-const STORAGE_KEY = 'treinamentos_volei_config_v2';
 
 export default function App() {
-  const [config, setConfig] = useState<SalesPageConfig>(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        return { ...defaultConfig, ...parsed };
-      }
-      return defaultConfig;
-    } catch (e) {
-      return defaultConfig;
-    }
-  });
-
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-
-  const handleOpenEdit = useCallback(() => setIsEditModalOpen(true), []);
-  const handleCloseEdit = useCallback(() => setIsEditModalOpen(false), []);
-
-  const handleSaveConfig = useCallback((newConfig: SalesPageConfig) => {
-    setConfig(newConfig);
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(newConfig));
-    } catch (e) {
-      console.error('Failed to save config', e);
-    }
-  }, []);
-
-  const handleResetConfig = useCallback(() => {
-    setConfig(defaultConfig);
-    try {
-      localStorage.removeItem(STORAGE_KEY);
-    } catch (e) {
-      console.error('Failed to reset config', e);
-    }
-  }, []);
+  const config = defaultConfig;
 
   return (
     <div className="min-h-screen bg-[#071A33] text-white font-sans selection:bg-[#FF7A00] selection:text-black antialiased relative">
@@ -117,18 +78,7 @@ export default function App() {
       />
 
       {/* 13. FOOTER */}
-      <Footer onOpenEdit={handleOpenEdit} />
-
-      {/* Modals */}
-      <Suspense fallback={null}>
-        <EditModal
-          isOpen={isEditModalOpen}
-          onClose={handleCloseEdit}
-          config={config}
-          onSave={handleSaveConfig}
-          onReset={handleResetConfig}
-        />
-      </Suspense>
+      <Footer />
 
     </div>
   );

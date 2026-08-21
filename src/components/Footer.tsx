@@ -1,10 +1,6 @@
 import React from 'react';
 
-interface FooterProps {
-  onOpenEdit?: () => void;
-}
-
-export const Footer: React.FC<FooterProps> = React.memo(({ onOpenEdit }) => {
+export const Footer: React.FC = React.memo(() => {
   return (
     <footer id="footer" className="py-10 bg-[#071A33] border-t border-white/10 text-center text-zinc-300 text-xs sm:text-sm space-y-4 relative z-10">
       <div className="max-w-4xl mx-auto px-4 space-y-3">
@@ -27,17 +23,6 @@ export const Footer: React.FC<FooterProps> = React.memo(({ onOpenEdit }) => {
         <p className="text-zinc-400 text-xs pt-2">
           © {new Date().getFullYear()} +700 Treinos Prontos de Vôlei. Todos os direitos reservados.
         </p>
-
-        {onOpenEdit && (
-          <div className="pt-2">
-            <button
-              onClick={onOpenEdit}
-              className="text-zinc-500 hover:text-zinc-300 text-[11px] transition-colors"
-            >
-              Configurações da Página
-            </button>
-          </div>
-        )}
       </div>
     </footer>
   );
